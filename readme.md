@@ -49,8 +49,8 @@
 
 ### Audit
 * Overhead and Impact
-    * [RequestMap](http://www.requestmap.webperf.tools)
-    * [RequestMap](http://www.requestmap.webperf.tools/render/[id])
+    * [RequestMap](http://requestmap.webperf.tools)
+    * [RequestMap](http://requestmap.webperf.tools/render/[id])
     * [WebPageTest](http://www.webpagetest.org)
         * blackhole server 72.66.115.13
 * strip third party from Page
@@ -186,8 +186,72 @@ Low-Quality Placeholders
 
 ## Fonts - Zach Leatherman
 
+> 5 Whys of Web Font Loading Performance
+
+[Live Examples](https://github.com/zachleat/performance-sometime)
+
+* Invisible Text
+    * Flash of invisible text FoiT
+* Text in Motion
+    * Flash of unset text FouT
+* First Meaningful Paint
+* New measurement Metrics
+    * All text visible
+    * Web Font Reflow Count
+
+* System Fonts
+    * no network request
+    * instant render
+
+### Google Fonts
+* Woff2
+* Sub-Setting
+* Self hosting
+* Sharding is Anti-Pattern on HTTP2
+    * Move Font to other domain
+* Do not use icon-fonts, use SVGs
+* IE and EDGE have build in swap-ish behavior
+
+```html
+<link rel="dns-prefetch" href="http://google.fonts.de">
+<link rel="preconnect" href="http://google.fonts.de" crossorigin>
+<link rel="preload" href="notosans.woff2" as="font" type="font/woff2" crossorigin>
+```
+
+```css
+@font-face {
+    font-display: swap;
+    font-display: optional;
+}
+```
+
+### How to choose what to preload?
+* User Disruption Prioritization
+* Preload one of each Family
+    * Works great on Safari
+
+[CSS Font-Loading Api](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API)
+
+
+
 ## Protocols - Natasha Rooney
 
 ## Fun with HTTP Headers - Andrew Betts
 
 ## Rendering Metrics & UX - Tammy Everts
+
+
+## Links
+[Reflow](https://developers.google.com/speed/docs/insights/browser-reflow)
+
+[Variable Font](https://developers.google.com/web/fundamentals/design-and-ux/typography/variable-fonts/)
+
+[CSS Font-Loading Api](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API)
+
+[Axis Praxis](https://www.axis-praxis.org/)
+
+[Closure Compiler](https://developers.google.com/closure/compiler/)
+
+[Service Workers](https://developers.google.com/web/fundamentals/primers/service-workers/)
+
+[App Shell](https://developers.google.com/web/fundamentals/architecture/app-shell)
