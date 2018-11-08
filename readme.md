@@ -7,7 +7,7 @@
 * JS blocking Rendering
     * Site is not interactive, while JS Boot*Up
 * Loaded ?Dasy-Chain?
-    * Put Script*Tag to bottom of Page
+    * Put Script-Tag to bottom of Page
 * Preloader aka Lookahead Parser
 * [BrowserScope](http://www.browserscope.org/)
 * Load scripts async
@@ -184,6 +184,7 @@ Low-Quality Placeholders
 * [Service Workers](https://developers.google.com/web/fundamentals/primers/service-workers/)
 * [App Shell](https://developers.google.com/web/fundamentals/architecture/app-shell)
 
+---
 ## Fonts - Zach Leatherman
 
 > 5 Whys of Web Font Loading Performance
@@ -234,18 +235,40 @@ Low-Quality Placeholders
 
 [CSS Font-Loading Api](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API)
 
-
+---
 ## Protocols - Natasha Rooney
 
 [OSI-Model](https://de.wikipedia.org/wiki/OSI-Modell)
 
+[Edge Computing](https://de.wikipedia.org/wiki/Edge_Computing)
+
+[Pipelining](https://de.wikipedia.org/wiki/HTTP-Pipelining):
+* 6 Connection max
+
+[TLS](https://de.wikipedia.org/wiki/Transport_Layer_Security)
+
+[HTTP/2](https://en.wikipedia.org/wiki/HTTP/2)
+
+[Head of Line Blocking](https://en.wikipedia.org/wiki/Head-of-line_blocking)
+> Somebody in front of you is blocking from exiting
+
+[QUIC](https://de.wikipedia.org/wiki/Quick_UDP_Internet_Connections)
+
+[QUIC & HTTP/2](https://www.callstats.io/blog/2017/02/03/web-protocols-http2-quic)
+
+TCP Sawtooth:
+![TCP Sawtooth](https://www.researchgate.net/profile/Ali_Talpur/publication/313851520/figure/fig1/AS:463860089004032@1487604271851/A-typical-TCP-sawtooth-behaviour.png)
 
 
+
+
+---
 ## Fun with HTTP Headers - Andrew Betts
 
+---
 ## Rendering Metrics & UX - Tammy Everts
 
-
+---
 ## Links
 [Reflow](https://developers.google.com/speed/docs/insights/browser-reflow)
 
@@ -279,3 +302,10 @@ Low-Quality Placeholders
 
 [crossorigin](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
 
+[Edge Computing](https://de.wikipedia.org/wiki/Edge_Computing)
+
+[Pipelining](https://de.wikipedia.org/wiki/HTTP-Pipelining)
+
+[TLS](https://de.wikipedia.org/wiki/Transport_Layer_Security)
+
+[HTTP/2](https://en.wikipedia.org/wiki/HTTP/2)
