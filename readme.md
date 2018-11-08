@@ -1,6 +1,14 @@
 # performance.now() - Amsterdam 
 ![performance.now()](https://perfnow.nl/_img/logo.svg)
 
+## TODOs
+
+1. Technical Task: Server Timing evaluation
+2. Technical Task: Feature-Policy evaluation
+3. Technical Task: Security Headers evaluation
+4. Technical Task: Self-Hosting Google-Font
+
+
 ## Making JavaScript (JS) Fast - Steve Souders [HTTPArchive](https://httparchive.org)
 
 * JS biggest Problem in Web*Performance
@@ -260,10 +268,46 @@ TCP Sawtooth:
 ![TCP Sawtooth](https://www.researchgate.net/profile/Ali_Talpur/publication/313851520/figure/fig1/AS:463860089004032@1487604271851/A-typical-TCP-sawtooth-behaviour.png)
 
 
-
-
 ---
 ## Fun with HTTP Headers - Andrew Betts
+
+[HTTP Header Felder](https://de.wikipedia.org/wiki/Liste_der_HTTP-Headerfelder)
+
+```HTTP
+clear-site-data // no browser support
+expires:
+```
+
+`Expires` wont work with a `cache-control: max-age` header
+
+The headers we want
+
+* content-security-policy
+    * Firewall in browser
+* Strict-Transport-Security
+    * max-age=10886400;
+    * preload
+* Referrer-Policy: 
+    * ms: Referrer Policy: no-referrer-when-downgrade
+    * fav: origin-when-cross-origin
+* Access-Control
+* [Client-Hints](https://httpwg.org/http-extensions/client-hints.html)
+    * Clean-Up User-Agent Field
+* Link (preload)
+    * Fonts and JS
+* 103 Status Code - Early Hints
+    * you can send 2 headers
+        * Early-Hint Response without body
+        * 200 Response with body
+* Server Timing
+* Feature-Policy
+* Sec-Origin-Policy
+
+[Security Headers](https://securityheaders.com/)
+
+[meinestadt Report](https://securityheaders.com/?q=www.meinestadt.de&followRedirects=on)
+
+[Slides](https://fastly.us/headers)
 
 ---
 ## Rendering Metrics & UX - Tammy Everts
@@ -309,3 +353,5 @@ TCP Sawtooth:
 [TLS](https://de.wikipedia.org/wiki/Transport_Layer_Security)
 
 [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2)
+
+[Client-Hints](https://httpwg.org/http-extensions/client-hints.html)
