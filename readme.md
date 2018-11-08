@@ -218,6 +218,8 @@ Low-Quality Placeholders
 <link rel="preload" href="notosans.woff2" as="font" type="font/woff2" crossorigin>
 ```
 
+[crossorigin](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
+
 ```css
 @font-face {
     font-display: swap;
@@ -233,8 +235,11 @@ Low-Quality Placeholders
 [CSS Font-Loading Api](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API)
 
 
-
 ## Protocols - Natasha Rooney
+
+[OSI-Model](https://de.wikipedia.org/wiki/OSI-Modell)
+
+
 
 ## Fun with HTTP Headers - Andrew Betts
 
@@ -255,3 +260,22 @@ Low-Quality Placeholders
 [Service Workers](https://developers.google.com/web/fundamentals/primers/service-workers/)
 
 [App Shell](https://developers.google.com/web/fundamentals/architecture/app-shell)
+
+[BrowserScope](http://www.browserscope.org/)
+
+[RequestMap](http://requestmap.webperf.tools)
+
+[WebPageTest](http://www.webpagetest.org)
+
+[CharlesProxy](https://www.charlesproxy.com/)
+
+[BitFields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators)
+
+[PassiveEventListeners](https://developers.google.com/web/updates/2016/06/passive-event-listeners)
+
+[polyfill](https://github.com/zzarcon/default-passive-events)
+
+[OSI-Modell](https://de.wikipedia.org/wiki/OSI-Modell)
+
+[crossorigin](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
+
