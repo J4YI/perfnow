@@ -1,14 +1,20 @@
 # performance.now() - Amsterdam 
 ![performance.now()](https://perfnow.nl/_img/logo.svg)
 
+---
 ## TODOs
 
-1. Technical Task: Server Timing evaluation
+1. Technical Task: Server Timing evaluations
 2. Technical Task: Feature-Policy evaluation
 3. Technical Task: Security Headers evaluation
 4. Technical Task: Self-Hosting Google-Font
+5. Pagespeed Architect Board - Paul, Andre, Pascal, Gregor
+6. Define Metrics we care about and fit our Users / Userbehavior
+7. Performance Budget
+8. Technical Task: Custom Metrics evaluation
+9. Technical Task: SSR A/B Kameleoon evaluation
 
-
+---
 ## Making JavaScript (JS) Fast - Steve Souders [HTTPArchive](https://httparchive.org)
 
 * JS biggest Problem in Web*Performance
@@ -119,7 +125,7 @@
 * Dont animate elements below other nodes like fixed headers
 * Dont animate too many elements
 
-###Fixed Elements
+### Fixed Elements
 * Repaint with every frame when scrolling
 * Use will-change property or transform: translate3D(0,0,0)
 
@@ -305,12 +311,18 @@ The headers we want
 
 [Security Headers](https://securityheaders.com/)
 
-[meinestadt Report](https://securityheaders.com/?q=www.meinestadt.de&followRedirects=on)
+[meinestadt.de Report](https://securityheaders.com/?q=www.meinestadt.de&followRedirects=on)
 
 [Slides](https://fastly.us/headers)
 
 ---
 ## Rendering Metrics & UX - Tammy Everts
+
+[Performance Case-Studies](https://WPOstats.com "WPOStats")
+
+[Speedcurve Picker](https://lab.speedcurve.com/rendering/picker.php)
+
+[Custom Metrics](https://speedcurve.com/blog/user-timing-and-custom-metrics/)
 
 ---
 ## Links
