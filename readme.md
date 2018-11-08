@@ -1,5 +1,5 @@
-# performance.now() - Amsterdam 
 ![performance.now()](https://perfnow.nl/_img/logo.svg)
+# performance.now() - Amsterdam 
 
 ---
 ## TODOs
@@ -8,8 +8,10 @@
 2. Technical Task: Feature-Policy evaluation
 3. Technical Task: Security Headers evaluation
 4. Technical Task: Self-Hosting Google-Font
-5. Pagespeed Architect Board - Paul, Andre, Pascal, Gregor
-6. Define Metrics we care about and fit our Users / Userbehavior
+5. Pagespeed Architect Board
+    * Paul, Andre, Pascal, Gregor
+    * Fokusierter an den Themen arbeiten
+6. Define Metrics we care about and fit our Users / User-Behavior
 7. Performance Budget
 8. Technical Task: Custom Metrics evaluation
 9. Technical Task: SSR A/B Kameleoon evaluation
@@ -51,6 +53,7 @@
 ## Third Party Governance - Harry Roberts
 
 * Tag Manager gets out of hand
+    * Budget for 3rd Party Scripts
 
 ### Understand
 * Insecure origins; mixed content warning
