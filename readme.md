@@ -20,6 +20,7 @@
 13. Technical Task: SpeedUp Booking/Dating/Airbnb Suchseiten evaluation
 14. Technical Task: remove .png sprites
 15. Technical Task: Strategy for javascript logging and visualization
+16. Technical Task: PWA evaluation
 
 ---
 ## Making JavaScript (JS) Fast - [Steve Souders] 
@@ -535,6 +536,37 @@ if(event.request.headers.get('save-data')){
 ---
 ## PWA Challenges - [Jason Grigsby]
 
+[PWA Stats]
+[Pintrest PWA Case Study]
+[Digiday]
+
+* Service Worker hard to A/B test
+* PWA
+
+```css
+.backButton {
+    display: block;
+}
+
+@media (display-mode: standalone) or (display-mode: fullscreen) {
+    .backButton {
+        display: none;
+    }
+}
+```
+
+* Smooth Pages - Avoid Jumps, use skeleton pages
+* App Shell Model
+    * first paint happens quickly
+    * Offline Page in PWA - Trivago Offline Page
+    * Offline indicator
+    * Show Meta info how old cache is
+    * background sync
+
+[Workbox]
+[Payment Request Api]
+[A Book Apart]
+
 ---
 ## Balancing Performance with Other Requirements - [Scott Jehl]
 
@@ -663,7 +695,12 @@ if(event.request.headers.get('save-data')){
 [ImageOptim]: https://imageoptim.com/howto.html
 [Oh shit, git!]: https://ohshitgit.com/
 [uncss]: https://github.com/uncss/uncss
-
+[PWA Stats]: https://www.pwastats.com/
+[Pintrest PWA Case Study]: https://medium.com/dev-channel/a-pinterest-progressive-web-app-performance-case-study-3bd6ed2e6154
+[Digiday]: https://digiday.com/media/wired-launching-progressive-web-app-boost-page-speed/
+[Workbox]: https://developers.google.com/web/tools/workbox/
+[Payment Request Api]: https://www.w3.org/TR/payment-request/
+[A Book Apart]: https://abookapart.com/products/progressive-web-apps
 
 <!-- Twitter Links -->
 [Steve Souders]: https://twitter.com/souders?lang=de
