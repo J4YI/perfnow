@@ -328,6 +328,34 @@ The headers we want
 [Custom Metrics](https://speedcurve.com/blog/user-timing-and-custom-metrics/)
 
 ---
+## The Long-Tail of Performance -  Tim Kadlec
+
+
+
+---
+## Resource Loading - Yoav Weiss
+
+---
+## Optimizing Images - Kornel Lesinski
+
+---
+## Performance Archeology - Katie Sylor-Miller
+
+---
+## PWA Challenges - Jason Grigsby
+
+---
+## Balancing Performance with Other Requirements - Scoll Jehl
+
+---
+## Building the Foundations for Performance - Michelle Vu
+
+---
+## Closing keynote - Paul Irish
+
+
+
+---
 ## Links
 [Reflow](https://developers.google.com/speed/docs/insights/browser-reflow)
 
