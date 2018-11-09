@@ -345,7 +345,8 @@ The headers we want
 * webpagetest - throttle_cpu
 * [FoiT vs FouT]
 * Remove Reflows
-* Open-Sans vs Verdana va Arial
+* [Font Style Matcher]
+    * Open-Sans vs Verdana va Arial
 * [Creating Font Subsets]
     * [glyphhanger]
 
