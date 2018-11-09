@@ -8,7 +8,7 @@
 2. Technical Task: Feature-Policy evaluation
 3. Technical Task: Security Headers evaluation
 4. Technical Task: Self-Hosting Google-Font
-5. Pagespeed Architect Board
+5. Pagespeed Architect Board (Dedeziertes )
     * Fokusierter an den Themen arbeiten
 6. Define Metrics we care about and fit our Users / User-Behavior
 7. Performance Budget
@@ -642,6 +642,7 @@ if(event.request.headers.get('save-data')){
 
 ---
 ## Closing keynote - [Paul Irish]
+
 
 ---
 ## Twitters
