@@ -19,6 +19,7 @@
 12. Technical Task: AV1 evaluation
 13. Technical Task: SpeedUp Booking/Dating/Airbnb Suchseiten evaluation
 14. Technical Task: remove .png sprites
+15. Technical Task: Strategy for javascript logging and visualization
 
 ---
 ## Making JavaScript (JS) Fast - [Steve Souders] 
@@ -493,6 +494,14 @@ if(event.request.headers.get('save-data')){
 ---
 ## Performance Archeology - [Katie Sylor-Miller]
 
+> Performance directly affects conversion
+
+> Our experiences are not our users experiences
+
+> Architecture for deletion
+
+> Code Freeze while high Retail-Season
+
 [Oh shit, git!]
 
 * `DOMContentLoaded` is not what you should focus on
@@ -510,7 +519,17 @@ if(event.request.headers.get('save-data')){
         * [uncss]
         * Add old css as bugfix
 * SVG
-    * 
+    * use them
+* Reduce JS
+    * Load only what you need
+    * Automation
+        * Closure Compiler
+            * RIP
+    * Manual JS Reduction
+        * You have to have User-Data
+        * Not the holy grail
+    * Javascript Instrumentation
+        * Coverage-Tab
     
 ---
 ## PWA Challenges - [Jason Grigsby]
