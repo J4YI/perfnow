@@ -641,8 +641,63 @@ if(event.request.headers.get('save-data')){
 
 
 ---
-## Closing keynote - [Paul Irish]
+## Closing Keynote - [Paul Irish]
 
+[Lighthouse GIT]
+
+### When is Load?
+* Page load cannot be captured by one single metric
+* Visual Metrics
+* Interactivity Metrics
+* FCP - First Contentful Paint
+    * First paint of content
+        * text
+        * images
+        * canvas
+        * svg
+        * One Glyph of Text
+* FMP -  First Meaningful Paint
+    * The primary content is visible
+        * most significant layout change
+        * Catches FoiT
+        * Waits for Web-Fonts to load
+            * < 200 Characters or fewer
+            * Icon-Fonts mess with these heuristics
+        * Is sensitive to little changes
+* VC - Visually Complete
+    * Visually, the page is done loading
+        * modal popups or carousels mess with VC
+* SI - Speed Index
+    * Measures % of Visual Completion
+        * Compares Color Pallets
+* LS - Layout Stability Metric - Layout Jenk Api
+    * Working Draft
+* Hero Rendering Times
+    * Last Painted Hero
+        * Last paint of critical content
+        * Largest h1
+        * Largest img
+        * LPH = Math 
+* Main Thread Tasks
+    * [RAIL Model]
+        * Was rewritten
+    * Input Delay
+        * < 100 ms
+        * From click -> eventHandler execution
+    * Long tasks jeopardize handling input quickly
+* TTI - Time To Interactive
+    * Load is finished
+* FCI - First CPU Idle
+    * Main threads first snooze after FMP
+        * Quite window ~5 sec gap
+* [FID] - First Input Delay
+* [EQT] - Expected Queueing Time
+    * How Busy is the main thread in a 10 sec window
+* RUM-Data
+    * Input delay
+        *  now - event.timestamp = queueing Time
+    * [Performance Oberserver]
+        * [Performance Observer Tracing]
 
 
 ---
@@ -776,6 +831,11 @@ if(event.request.headers.get('save-data')){
 [Native Lazy Load]: https://css-tricks.com/a-native-lazy-load-for-the-web-platform/
 [Time is Money - Tammy Everts]: http://shop.oreilly.com/product/0636920041450.do
 [Define Key Performance]: https://addyosmani.com/blog/performance-budgets/
+[RAIL Model]: https://developers.google.com/web/fundamentals/performance/rail
+[FID]: https://developers.google.com/web/updates/2018/05/first-input-delay
+[Lighthouse GIT]: https://github.com/GoogleChrome/lighthouse
+[Performance Oberserver]: https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver
+[Performance Observer Tracing]: https://github.com/tdresser/performance-observer-tracing
 
 <!-- Twitter Links -->
 [Steve Souders]: https://twitter.com/souders?lang=de
