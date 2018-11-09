@@ -16,6 +16,8 @@
 8. Technical Task: Custom Metrics evaluation
 9. Technical Task: SSR A/B Kameleoon evaluation
 10. Technical Task: Font Site Reflows evaluation
+11. Technical Task: HTTP/2
+11. Technical Task: AV1 evaluation
 
 ---
 ## Making JavaScript (JS) Fast - [Steve Souders] 
@@ -50,6 +52,8 @@
 * budget 3rd parties | Wie messen wir das?
 * gzip double*check compression
 * review code coverage
+
+[Slides](https://www.slideshare.net/souders/make-javascript-faster)
 
 ---
 ## Third Party Governance - [Harry Roberts]
@@ -385,8 +389,104 @@ if(event.request.headers.get('save-data')){
 ---
 ## Resource Loading - [Yoav Weiss]
 
+> time != (bytes / BW)
+> User-Experience > Developer-Experience
+
+### Problems
+* Connection establishment
+* Server side processing
+    * 80% of Web-Performance is "Client-Side bottlenecks"
+* TCP-Slowstart
+    * first Round-Trip are 10 Packages === 14kb
+![TCP Slowstart](https://i.stack.imgur.com/UNW7d.jpg)
+* HTML Parser (Preloader)
+* Critical Rendering Path
+![Rendering](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/10/1413373274crp-4.png)
+    * Prioritization HTML > CSS > JS > Fonts > Images
+* Queueing
+    * HTTP/1.1 Head of line blocking
+    * [Buffer bloat]
+* Contention
+* Bloat
+
+### Today's Solution
+* Queueing
+    * HTTP/2 (H2) to the rescue
+    * Quic
+    * Web Packaging
+        * Bundle multiple Resources into one, but browser can read them separately
+    * H2 push is tougher than i thought
+    * Cache Digests
+        * Send img of everything what is in browser cache
+* Discovery
+    * Preload
+        * Kick-off resource download ahead of time
+        * Priority Hints
+    * Preconnect
+    * Connection coalescing
+* Slow Start / Contention
+    * Unshard your Domains
+    * Non-credentialed connections
+    * Secondary Certificat
+* Bloat
+    * Load only what you need
+    * Brotli
+    * Responsive Images
+    * Client Hints
+
+### Tomorrow
+* TCP Fast Open
+* TLS 1.3
+* QUIC
+* Alt-Svc over DNS
+* Compression API
+
+### What to do?
+* Turn on HTTP/2 and [BBR](https://blog.cloudflare.com/http-2-prioritization-with-nginx/)
+* Prepush, preconnect, preload
+* Load only what you need
+* Brotli
+* Responsive Images
+
 ---
 ## Optimizing Images - [Kornel Lesinski]
+
+* .jpeg
+    * Baseline jpeg
+        * load from top to bottom
+        * switch how img is loaded
+            * low frequencies first
+            * then details
+        * [progressive jpg with node](https://fettblog.eu/snippets/node.js/progressive-jpegs-gm/)
+        * WebP dont support progressive loading
+        * HTTP/2
+            * server-side implementation (js hack)
+                * Node.js
+                    1. Receive request
+                    2. Send first 512 bytes
+                    3. Wait 20ms
+                        * Let the browser handle critical resources (html || css || js)
+                    4. Send first 15% of the file
+                    5. Wait for other files
+                        * no CDN
+                            * CDN ruins hack
+                        * just for personal website
+                * Edge Workers
+                    * CDN "ServiceWorkers"
+                    * Let you bypass streams
+                * [MozJPEG] - Compression and Progressive
+                    * [ImageOptim]
+                * WebP is VP8 (Videoformat)
+                    * One single frame of video
+                * H.265 compresses twice as good as WebP
+                    * Costs
+                * AV1 ships in Chrome and FF
+                    * is H.265
+                    * Free of costs
+                    * Put image in `<video muted autoplay playsinline>`-Tag
+                        * Hack!
+
+[Github](https://github.com/kornelski)
 
 ---
 ## Performance Archeology - [Katie Sylor-Miller]
@@ -517,7 +617,9 @@ if(event.request.headers.get('save-data')){
 [Performance Case-Studies]: https://WPOstats.com "WPOStats"
 [Speedcurve Picker]: https://lab.speedcurve.com/rendering/picker.php
 [Custom Metrics]: https://speedcurve.com/blog/user-timing-and-custom-metrics/
-
+[Buffer bloat]: https://en.wikipedia.org/wiki/Bufferbloat
+[MozJPEG]: https://github.com/mozilla/mozjpeg/blob/master/README.md
+[ImageOptim]: https://imageoptim.com/howto.html
 
 
 <!-- Twitter Links -->
