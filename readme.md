@@ -592,6 +592,54 @@ if(event.request.headers.get('save-data')){
 ---
 ## Building the Foundations for Performance - [Michelle Vu]
 
+> Create a dedicated Web-Performance Team
+
+> Documentation !== Communication
+
+[Time is Money - Tammy Everts]
+
+### Ownership
+
+* Create a dedicated Web-Performance Team
+    * Lack of Ownership
+        * Metrics quality
+        * Tooling
+        * Regression Investigation
+        * Analysis
+        * Support
+
+### [Define Key Performance]
+
+* Quantity Based Metrics
+    * JS Size, Requests
+* Rule based MMetrics
+* Milestone Timings
+* Tie them to business metrics
+* Experiment
+    * Slowdown for important interactions on homefeed page-load
+    * Better loading state on homefeed
+
+### Performance Data
+
+* Synthetic Testing
+* Real User Metrics (RUM)
+
+### Regression Testing
+
+* Fighting Regression > new Optimization
+
+* 6 month for concept
+
+### Education
+* Documentation
+    * Key Performance Metrics
+    * Done Optimizations
+    * Best Practices
+    * Logging Frameworks
+* Consulting
+* Training
+
+
 ---
 ## Closing keynote - [Paul Irish]
 
@@ -724,6 +772,8 @@ if(event.request.headers.get('save-data')){
 [Critters]: https://github.com/GoogleChromeLabs/critters
 [loadCss]: https://github.com/filamentgroup/loadCSS
 [Native Lazy Load]: https://css-tricks.com/a-native-lazy-load-for-the-web-platform/
+[Time is Money - Tammy Everts]: http://shop.oreilly.com/product/0636920041450.do
+[Define Key Performance]: https://addyosmani.com/blog/performance-budgets/
 
 <!-- Twitter Links -->
 [Steve Souders]: https://twitter.com/souders?lang=de
