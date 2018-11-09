@@ -15,10 +15,12 @@
 7. Performance Budget
 8. Technical Task: Custom Metrics evaluation
 9. Technical Task: SSR A/B Kameleoon evaluation
+10. Technical Task: Font Site Reflows evaluation
 
 ---
-## Making JavaScript (JS) Fast - Steve Souders [HTTPArchive](https://httparchive.org)
+## Making JavaScript (JS) Fast - [Steve Souders] 
 
+* [HTTPArchive](https://httparchive.org)
 * JS biggest Problem in Web*Performance
 * JS blocking Rendering
     * Site is not interactive, while JS Boot*Up
@@ -50,7 +52,7 @@
 * review code coverage
 
 ---
-## Third Party Governance - Harry Roberts
+## Third Party Governance - [Harry Roberts]
 
 * Tag Manager gets out of hand
     * Budget for 3rd Party Scripts
@@ -108,7 +110,7 @@
 * Sweet Spot Business*Value vs Performance Loss
 
 ---
-## Debugging UI Perf Issues - Anna Migas
+## Debugging UI Perf Issues - [Anna Migas]
 
 * Perceived performance
     * First Meaningful Paint
@@ -162,7 +164,9 @@ $intrinsic-ration:  (img-height / img-width) * 100
 Low-Quality Placeholders
 
 ---
-## Geeking out with Performance Tweaks - Adrian Holovaty [soundslice](https://www.soundslice.com/)
+## Geeking out with Performance Tweaks - [Adrian Holovaty]
+
+[soundslice](https://www.soundslice.com/)
 
 > How do i know what i know?
 
@@ -202,7 +206,7 @@ Low-Quality Placeholders
 * [App Shell](https://developers.google.com/web/fundamentals/architecture/app-shell)
 
 ---
-## Fonts - Zach Leatherman
+## Fonts - [Zach Leatherman]
 
 > 5 Whys of Web Font Loading Performance
 
@@ -253,9 +257,9 @@ Low-Quality Placeholders
 [CSS Font-Loading Api](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API)
 
 ---
-## Protocols - Natasha Rooney
+## Protocols - [Natasha Rooney]
 
-[OSI-Model](https://de.wikipedia.org/wiki/OSI-Modell)
+[OSI-Model](https://de.wikipedia.org/wiki/OSI-Model)
 
 [Edge Computing](https://de.wikipedia.org/wiki/Edge_Computing)
 
@@ -278,7 +282,7 @@ TCP Sawtooth:
 
 
 ---
-## Fun with HTTP Headers - Andrew Betts
+## Fun with HTTP Headers - [Andrew Betts]
 
 [HTTP Header Felder](https://de.wikipedia.org/wiki/Liste_der_HTTP-Headerfelder)
 
@@ -319,82 +323,217 @@ The headers we want
 [Slides](https://fastly.us/headers)
 
 ---
-## Rendering Metrics & UX - Tammy Everts
+## Rendering Metrics & UX - [Tammy Everts]
 
-[Performance Case-Studies](https://WPOstats.com "WPOStats")
+[Performance Case-Studies]
 
-[Speedcurve Picker](https://lab.speedcurve.com/rendering/picker.php)
+[Speedcurve Picker]
 
-[Custom Metrics](https://speedcurve.com/blog/user-timing-and-custom-metrics/)
-
----
-## The Long-Tail of Performance -  Tim Kadlec
-
-
+[Custom Metrics]
 
 ---
-## Resource Loading - Yoav Weiss
+## The Long-Tail of Performance -  [Tim Kadlec]
+
+* Average Site: 3.0 MB
+* Median Site: 1.5 MB
+* webpagetest - throttle_cpu
+* [FoiT vs FouT]
+* Remove Reflows
+* Open-Sans vs Verdana va Arial
+* [Creating Font Subsets]
+    * [glyphhanger]
+
+
+* Core Content
+    * Essential HTML and CSS, usable NO-JS Experience
+* Enhancements
+    * JS
+* Leftovers
+    * Tracker and other Stuff
+
+* Save-Data Header-Flag
+* Save-Data-Api
+* give user control, over own data usage
+* Use [Service Worker] to decide over "what to load"
+
+```javascript
+"use strict";
+this.addEventListener('fetch', event => {
+// Save Data support
+if(event.request.headers.get('save-data')){
+    //Return smaller images
+    if (/\.jpg$|.gif$|.png$/.test(event.request.url)) {
+      let saveDataUrl = event.request.url.substr(0, event.request.url.lastIndexOf(".")) + '-savedata' + event.request.url.substr(event.request.url.lastIndexOf("."), event.request.url.length - 1);
+
+      event.respondWith(
+        fetch(saveDataUrl, {
+          mode: 'no-cors'
+        })
+      );
+    }
+    // We want to save data, so restrict icons and fonts too
+    if (event.request.url.includes('fonts.googleapis.com')) {
+        // return nothing
+        event.respondWith(new Response('', {status: 408, statusText: 'Ignore fonts to save data.' }));
+    }
+  }
+});
+```
+
+> The choice is ours
 
 ---
-## Optimizing Images - Kornel Lesinski
+## Resource Loading - [Yoav Weiss]
 
 ---
-## Performance Archeology - Katie Sylor-Miller
+## Optimizing Images - [Kornel Lesinski]
 
 ---
-## PWA Challenges - Jason Grigsby
+## Performance Archeology - [Katie Sylor-Miller]
 
 ---
-## Balancing Performance with Other Requirements - Scoll Jehl
+## PWA Challenges - [Jason Grigsby]
 
 ---
-## Building the Foundations for Performance - Michelle Vu
+## Balancing Performance with Other Requirements - [Scott Jehl]
 
 ---
-## Closing keynote - Paul Irish
+## Building the Foundations for Performance - [Michelle Vu]
 
+---
+## Closing keynote - [Paul Irish]
 
+---
+## Twitters
+[Steve Souders]
+
+[Harry Roberts]
+
+[Tim Kadlec]
+
+[Tammy Everts]
+
+[Andrew Betts]
+
+[Anna Migas]
+
+[Adrian Holovaty]
+
+[Zach Leatherman]
+
+[Natasha Rooney]
+
+[Yoav Weiss]
+
+[Kornel Lesinski]
+
+[Katie Sylor-Miller]
+
+[Jason Grigsby]
+
+[Scott Jehl]
+
+[Michelle Vu]
+
+[Paul Irish]
 
 ---
 ## Links
-[Reflow](https://developers.google.com/speed/docs/insights/browser-reflow)
 
-[Variable Font](https://developers.google.com/web/fundamentals/design-and-ux/typography/variable-fonts/)
+[App Shell]
 
-[CSS Font-Loading Api](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API)
+[Axis Praxis]
 
-[Axis Praxis](https://www.axis-praxis.org/)
+[BitFields]
 
-[Closure Compiler](https://developers.google.com/closure/compiler/)
+[BrowserScope]
 
-[Service Workers](https://developers.google.com/web/fundamentals/primers/service-workers/)
+[CharlesProxy]
 
-[App Shell](https://developers.google.com/web/fundamentals/architecture/app-shell)
+[Client-Hints]
 
-[BrowserScope](http://www.browserscope.org/)
+[Closure Compiler]
 
-[RequestMap](http://requestmap.webperf.tools)
+[crossorigin]
 
-[WebPageTest](http://www.webpagetest.org)
+[CSS Font-Loading Api]
 
-[CharlesProxy](https://www.charlesproxy.com/)
+[Custom Metrics]
 
-[BitFields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators)
+[Edge Computing]
 
-[PassiveEventListeners](https://developers.google.com/web/updates/2016/06/passive-event-listeners)
+[HTTP/2]
 
-[polyfill](https://github.com/zzarcon/default-passive-events)
+[OSI-Model]
 
-[OSI-Modell](https://de.wikipedia.org/wiki/OSI-Modell)
+[PassiveEventListeners]
 
-[crossorigin](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes)
+[Performance Case-Studies]
 
-[Edge Computing](https://de.wikipedia.org/wiki/Edge_Computing)
+[Pipelining]
 
-[Pipelining](https://de.wikipedia.org/wiki/HTTP-Pipelining)
+[polyfill]
 
-[TLS](https://de.wikipedia.org/wiki/Transport_Layer_Security)
+[Reflow]
 
-[HTTP/2](https://en.wikipedia.org/wiki/HTTP/2)
+[RequestMap]
 
-[Client-Hints](https://httpwg.org/http-extensions/client-hints.html)
+[Service Workers]
+
+[Speedcurve Picker]
+
+[TLS]
+
+[Variable Font]
+
+[WebPageTest]
+
+
+<!-- Links -->
+[Reflow]: https://developers.google.com/speed/docs/insights/browser-reflow
+[Variable Font]: https://developers.google.com/web/fundamentals/design-and-ux/typography/variable-fonts/
+[CSS Font-Loading Api]: https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API
+[Axis Praxis]: https://www.axis-praxis.org/
+[Closure Compiler]: https://developers.google.com/closure/compiler/
+[Service Workers]: https://developers.google.com/web/fundamentals/primers/service-workers/
+[App Shell]: https://developers.google.com/web/fundamentals/architecture/app-shell
+[BrowserScope]: http://www.browserscope.org/
+[RequestMap]: http://requestmap.webperf.tools
+[WebPageTest]: http://www.webpagetest.org
+[CharlesProxy]: https://www.charlesproxy.com/
+[BitFields]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators
+[PassiveEventListeners]: https://developers.google.com/web/updates/2016/06/passive-event-listeners
+[polyfill]: https://github.com/zzarcon/default-passive-events
+[OSI-Model]: https://de.wikipedia.org/wiki/OSI-Model
+[crossorigin]: https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes
+[Edge Computing]: https://de.wikipedia.org/wiki/Edge_Computing
+[Pipelining]: https://de.wikipedia.org/wiki/HTTP-Pipelining
+[TLS]: https://de.wikipedia.org/wiki/Transport_Layer_Security
+[HTTP/2]: https://en.wikipedia.org/wiki/HTTP/2
+[Client-Hints]: https://httpwg.org/http-extensions/client-hints.html 
+[FoiT vs FouT]: https://www.zachleat.com/foitfout/#4000,4000,4000,4000
+[Font Style Matcher]: https://meowni.ca/font-style-matcher/
+[glyphhanger]: https://github.com/filamentgroup/glyphhanger#readme
+[Performance Case-Studies]: https://WPOstats.com "WPOStats"
+[Speedcurve Picker]: https://lab.speedcurve.com/rendering/picker.php
+[Custom Metrics]: https://speedcurve.com/blog/user-timing-and-custom-metrics/
+
+
+
+<!-- Twitter Links -->
+[Steve Souders]: https://twitter.com/souders?lang=de
+[Harry Roberts]: https://twitter.com/csswizardry?lang=de
+[Tim Kadlec]: https://twitter.com/tkadlec?lang=de
+[Tammy Everts]: https://twitter.com/tameverts?lang=de
+[Andrew Betts]: https://twitter.com/triblondon?lang=de
+[Anna Migas]: https://twitter.com/szynszyliszys?lang=de
+[Adrian Holovaty]: https://twitter.com/adrianholovaty?lang=de
+[Zach Leatherman]: https://twitter.com/zachleat?lang=de
+[Natasha Rooney]: https://twitter.com/thisnatasha?lang=de
+[Yoav Weiss]: https://twitter.com/yoavweiss?lang=de
+[Kornel Lesinski]: https://twitter.com/kornelski?lang=de
+[Katie Sylor-Miller]: https://twitter.com/ksylor?lang=de
+[Jason Grigsby]: https://twitter.com/grigs
+[Scott Jehl]: https://twitter.com/scottjehl
+[Michelle Vu]: https://twitter.com/micvu
+[Paul Irish]: https://twitter.com/paul_irish
