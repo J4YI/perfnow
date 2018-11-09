@@ -451,45 +451,48 @@ if(event.request.headers.get('save-data')){
 ---
 ## Optimizing Images - [Kornel Lesinski]
 
-* .jpeg
-    * Baseline jpeg
-        * load from top to bottom
-        * switch how img is loaded
-            * low frequencies first
-            * then details
-        * [progressive jpg with node](https://fettblog.eu/snippets/node.js/progressive-jpegs-gm/)
-        * WebP dont support progressive loading
-        * HTTP/2
-            * server-side implementation (js hack)
-                * Node.js
-                    1. Receive request
-                    2. Send first 512 bytes
-                    3. Wait 20ms
-                        * Let the browser handle critical resources (html || css || js)
-                    4. Send first 15% of the file
-                    5. Wait for other files
-                        * no CDN
-                            * CDN ruins hack
-                        * just for personal website
-                * Edge Workers
-                    * CDN "ServiceWorkers"
-                    * Let you bypass streams
-                * [MozJPEG] - Compression and Progressive
-                    * [ImageOptim]
-                * WebP is VP8 (Videoformat)
-                    * One single frame of video
-                * H.265 compresses twice as good as WebP
-                    * Costs
-                * AV1 ships in Chrome and FF
-                    * is H.265
-                    * Free of costs
-                    * Put image in `<video muted autoplay playsinline>`-Tag
-                        * Hack!
+> Keep JavaScript away from Images
+
+* Baseline jpeg
+    * load from top to bottom
+* switch how img is loaded
+    * low frequencies first
+    * then details
+* [progressive jpg with node](https://fettblog.eu/snippets/node.js/progressive-jpegs-gm/)
+* WebP dont support progressive loading
+* HTTP/2
+    * server-side implementation (js hack)
+        * Node.js
+            1. Receive request
+            2. Send first 512 bytes
+            3. Wait 20ms
+                * Let the browser handle critical resources (html || css || js)
+            4. Send first 15% of the file
+            5. Wait for other files
+                * no CDN
+                    * CDN ruins hack
+                * just for personal website
+        * Edge Workers
+            * CDN "ServiceWorkers"
+            * Let you bypass streams
+* [MozJPEG] - Compression and Progressive
+    * [ImageOptim]
+* WebP is VP8 (Videoformat)
+    * One single frame of video
+* H.265 compresses twice as good as WebP
+    * Costs
+* AV1 ships in Chrome and FF
+    * is H.265
+    * Free of costs
+    * Put image in `<video muted autoplay playsinline>`-Tag
+        * Hack!
 
 [Github](https://github.com/kornelski)
 
 ---
 ## Performance Archeology - [Katie Sylor-Miller]
+
+
 
 ---
 ## PWA Challenges - [Jason Grigsby]
