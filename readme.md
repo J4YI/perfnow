@@ -9,7 +9,6 @@
 3. Technical Task: Security Headers evaluation
 4. Technical Task: Self-Hosting Google-Font
 5. Pagespeed Architect Board
-    * Paul, Andre, Pascal, Gregor
     * Fokusierter an den Themen arbeiten
 6. Define Metrics we care about and fit our Users / User-Behavior
 7. Performance Budget
@@ -17,7 +16,9 @@
 9. Technical Task: SSR A/B Kameleoon evaluation
 10. Technical Task: Font Site Reflows evaluation
 11. Technical Task: HTTP/2
-11. Technical Task: AV1 evaluation
+12. Technical Task: AV1 evaluation
+13. Technical Task: SpeedUp Booking/Dating/Airbnb Suchseiten evaluation
+14. Technical Task: remove .png sprites
 
 ---
 ## Making JavaScript (JS) Fast - [Steve Souders] 
@@ -492,8 +493,25 @@ if(event.request.headers.get('save-data')){
 ---
 ## Performance Archeology - [Katie Sylor-Miller]
 
+[Oh shit, git!]
 
-
+* `DOMContentLoaded` is not what you should focus on
+* What are we gonna do?
+    * Improve initial loading of page
+    * Critical Rendering Path
+    * [WebPageTest]
+    * Lighthouse
+    * Chrome dev-tools
+* Lazy Loading Images
+    * Slow Devices will be more impacted then fast ones
+* CSS
+    * Automation to the Rescue
+        * Selenium
+        * [uncss]
+        * Add old css as bugfix
+* SVG
+    * 
+    
 ---
 ## PWA Challenges - [Jason Grigsby]
 
@@ -623,6 +641,8 @@ if(event.request.headers.get('save-data')){
 [Buffer bloat]: https://en.wikipedia.org/wiki/Bufferbloat
 [MozJPEG]: https://github.com/mozilla/mozjpeg/blob/master/README.md
 [ImageOptim]: https://imageoptim.com/howto.html
+[Oh shit, git!]: https://ohshitgit.com/
+[uncss]: https://github.com/uncss/uncss
 
 
 <!-- Twitter Links -->
