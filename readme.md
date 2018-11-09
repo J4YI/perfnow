@@ -163,7 +163,7 @@ contain: layout;
 ```css
 $intrinsic-ration:  (img-height / img-width) * 100
 .container {
-    padding-bottom: $intrinsic-ration
+    padding-bottom: $intrinsic-ration;
     height: 0;
     overflow: hidden
 }
@@ -570,6 +570,25 @@ if(event.request.headers.get('save-data')){
 ---
 ## Balancing Performance with Other Requirements - [Scott Jehl]
 
+> Move Fast & Don't Break Things
+
+> It's easier to **make a fast website**, than it is to **keep a website fast**...
+
+
+* Progressive Enhancement
+* First Meaningful Content
+    * Server Push
+        * Sending Assets to browser which wasn't requested yet
+        * Browser looks at local cache then network
+    * Inlining the CSS
+        * [Caches Api]
+        * [Critters] - critical Css webpack plugin
+        * [loadCss] - rel="preload" polyfill
+* Preload the inevitable - 3rd Party Scripts
+* Move the content variation to server-side
+    * Do the heavy listing to Server
+* [Native Lazy Load]
+
 ---
 ## Building the Foundations for Performance - [Michelle Vu]
 
@@ -701,6 +720,10 @@ if(event.request.headers.get('save-data')){
 [Workbox]: https://developers.google.com/web/tools/workbox/
 [Payment Request Api]: https://www.w3.org/TR/payment-request/
 [A Book Apart]: https://abookapart.com/products/progressive-web-apps
+[Caches Api]: https://developer.mozilla.org/de/docs/Web/API/Cache
+[Critters]: https://github.com/GoogleChromeLabs/critters
+[loadCss]: https://github.com/filamentgroup/loadCSS
+[Native Lazy Load]: https://css-tricks.com/a-native-lazy-load-for-the-web-platform/
 
 <!-- Twitter Links -->
 [Steve Souders]: https://twitter.com/souders?lang=de
