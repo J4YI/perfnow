@@ -23,7 +23,7 @@
 16. Technical Task: PWA evaluation
 
 ---
-## Making JavaScript (JS) Fast - [Steve Souders] 
+## [Making JavaScript (JS) Fast](https://www.slideshare.net/souders/make-javascript-faster) - [Steve Souders] 
 
 * [HTTPArchive](https://httparchive.org)
 * JS biggest Problem in Web*Performance
@@ -56,10 +56,8 @@
 * gzip double*check compression
 * review code coverage
 
-[Slides](https://www.slideshare.net/souders/make-javascript-faster)
-
 ---
-## Third Party Governance - [Harry Roberts]
+## [Third Party Governance](https://speakerdeck.com/csswizardry/its-my-third-party-and-ill-cry-if-i-want-to) - [Harry Roberts]
 
 * Tag Manager gets out of hand
     * Budget for 3rd Party Scripts
@@ -117,7 +115,7 @@
 * Sweet Spot Business*Value vs Performance Loss
 
 ---
-## Debugging UI Perf Issues - [Anna Migas]
+## [Debugging UI Perf Issues](https://www.slideshare.net/AnnaMigas1/performancenow-fast-but-not-furious) - [Anna Migas]
 
 * Perceived performance
     * First Meaningful Paint
@@ -213,7 +211,7 @@ Low-Quality Placeholders
 * [App Shell](https://developers.google.com/web/fundamentals/architecture/app-shell)
 
 ---
-## Fonts - [Zach Leatherman]
+## [Fonts](https://noti.st/zachleat/KNaZEg/the-five-whys-of-web-font-loading-performance) - [Zach Leatherman]
 
 > 5 Whys of Web Font Loading Performance
 
@@ -330,7 +328,7 @@ The headers we want
 [Slides](https://fastly.us/headers)
 
 ---
-## Rendering Metrics & UX - [Tammy Everts]
+## [Rendering Metrics & UX](https://www.slideshare.net/tammyeverts/how-i-learned-to-stop-worrying-and-love-ux-metrics) - [Tammy Everts]
 
 [Performance Case-Studies]
 
@@ -494,7 +492,7 @@ if(event.request.headers.get('save-data')){
 [Github](https://github.com/kornelski)
 
 ---
-## Performance Archeology - [Katie Sylor-Miller]
+## [Performance Archeology](https://www.slideshare.net/KatrinaSylorMiller/raiders-of-the-fast-start-frontend-performance-archaeology-performancenow-conference) - [Katie Sylor-Miller]
 
 > Performance directly affects conversion
 
@@ -534,7 +532,7 @@ if(event.request.headers.get('save-data')){
         * Coverage-Tab
     
 ---
-## PWA Challenges - [Jason Grigsby]
+## [PWA Challenges](https://www.slideshare.net/grigs/progressive-web-app-challenges) - [Jason Grigsby]
 
 [PWA Stats]
 [Pintrest PWA Case Study]
