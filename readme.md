@@ -36,9 +36,9 @@
 * Load scripts async
 * even better, prefer defer
 ```html
-    <head>
-        <link src="./app.js" rel="preload" as="script">
-    </head>
+<head>
+    <link src="./app.js" rel="preload" as="script">
+</head>
 ```
 * must be in the HTML-Head
 * Links Response Headers for even faster preload
